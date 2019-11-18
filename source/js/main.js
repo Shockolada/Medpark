@@ -15,29 +15,28 @@ $(document).ready(function () {
   });
 
   function showSubmenuByClick() {
+    console.log($(window).width());
     $('.main-nav__link.has-submenu').click(function () {
       event.preventDefault();
-      // $(this).off('mouseenter mouseleave');
-      $(this).closest('.main-nav__item').siblings().find('.submenu__icon').removeClass('active');
-      $(this).find('.submenu__icon').toggleClass('active');
-      $('.submenu').stop().slideUp(300);
+      $(this).closest('.main-nav__item').siblings().find('.submenu__icon').removeClass('isOpen');
+      $(this).find('.submenu__icon').toggleClass('isOpen');
+      $(this).closest('.main-nav__item').siblings().find('.submenu').stop().slideUp(300);
       $(this).closest('.main-nav__item').find('.submenu').stop().slideToggle(300);
     });
   }
 
   function showSubmenuByHover() {
+    console.log($(window).width());
     $('.main-nav__link.has-submenu').mouseenter(function () {
-      // $(this).off('click');
-      $(this).addClass('hover');
-      $('.submenu__icon').addClass('active');
-      $(this).find('.submenu__icon').addClass('active');
+      $(this).addClass('isOpen');
+      $(this).find('.submenu__icon').addClass('isOpen');
       $(this).closest('.main-nav__item').find('.submenu').stop().slideDown(300);
-    });
-    $('.main-nav__item').mouseleave(function () {
-      $('.submenu__icon').removeClass('active');
-      $(this).find('.main-nav__link.has-submenu').removeClass('hover');
-      $(this).find('.submenu__icon').removeClass('active');
-      $(this).find('.submenu').stop().slideUp(300);
+
+      $(this).closest('.main-nav__item').mouseleave(function () {
+        $(this).find('.main-nav__link.has-submenu').removeClass('isOpen');
+        $(this).find('.submenu__icon').removeClass('isOpen');
+        $(this).find('.submenu').stop().slideUp(300);
+      });
     });
   }
 
@@ -47,10 +46,10 @@ $(document).ready(function () {
     showSubmenuByHover();
   }
 
-  // submenuBehavior();
   $(window).resize(function () {
     if ($(window).width() < 940) {
-      $('.main-nav__link.has-submenu').off('mouseenter mouseleave');
+      $('.main-nav__link.has-submenu').off('mouseenter');
+      $('.main-nav__item').off('mouseleave');
       showSubmenuByClick();
     } else if ($(window).width() >= 940) {
       $('.main-nav__link.has-submenu').off('click');

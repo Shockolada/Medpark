@@ -45,7 +45,7 @@
 
   .main-nav__link:hover,
   .main-nav__link:focus,
-  .main-nav__link.hover,
+  .main-nav__link.isOpen,
   .main-nav__link.active {
     color: #ffffff;
     background-color: $color-accent;
@@ -56,9 +56,7 @@
     }
   }
 
-  .main-nav__link:hover,
-  .main-nav__link:focus,
-  .main-nav__link.hover {
+  .main-nav__link.isOpen {
     .submenu__icon:after {
       transform: rotate(-135deg);
     }
