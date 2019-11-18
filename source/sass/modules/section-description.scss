@@ -1,0 +1,15 @@
+.section-description {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1360 - 320)));
+  text-align: center;
+  
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}

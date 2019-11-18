@@ -1,0 +1,22 @@
+.languages {
+  display: flex;
+  @include list-reset;
+  margin-right: -10px;
+}
+
+.languages__item {
+  margin-right: 10px;
+}
+
+.languages__link {
+  padding: 3px;
+  color: $color-gray;
+  text-decoration: none;
+
+  transition: color 0.3s linear;
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+}

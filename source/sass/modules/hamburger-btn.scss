@@ -1,0 +1,42 @@
+.hamburger-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  width: 31px;
+  height: 30px;
+  padding: 3px;
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.hamburger-btn__line {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: $color-text;
+}
+
+.hamburger-btn__line--top {
+  margin-bottom: 3px;
+}
+
+.hamburger-btn__line--middle {
+  width: 15px;
+  margin-bottom: 3px;
+}
+
+.hamburger-btn.active {
+  &::before {
+    top: 13px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    bottom: 14px;
+    transform: rotate(-45deg);
+  }
+}

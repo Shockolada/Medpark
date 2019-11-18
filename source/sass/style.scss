@@ -1,0 +1,40 @@
+/* BASIC PAGE NEEDS */
+@import "basic/variables.scss";
+@import "basic/fonts.scss";
+@import "basic/normalize.scss";
+@import "basic/scaffolding.scss";
+@import "basic/visually-hidden.scss";
+@import "basic/no-scroll.scss";
+
+@import "mixins/mixins.scss";
+
+/* LIBRARIES */
+@import "libs/swiper.scss";
+
+/* MODULES */
+@import "modules/page-content.scss";
+@import "modules/container.scss";
+@import "modules/modal.scss";
+@import "modules/overlay.scss";
+@import "modules/button.scss";
+@import "modules/close-btn.scss";
+@import "modules/hamburger-btn.scss";
+@import "modules/search-btn.scss";
+@import "modules/link.scss";
+@import "modules/title.scss";
+@import "modules/section-description.scss";
+@import "modules/slider.scss";
+@import "modules/cards.scss";
+
+/* BLOCKS */
+@import "blocks/main/page-header.scss";
+@import "blocks/main/menu.scss";
+@import "blocks/main/main-nav.scss";
+@import "blocks/main/submenu.scss";
+@import "blocks/main/page-footer.scss";
+
+@import "blocks/languages.scss";
+@import "blocks/hero.scss";
+@import "blocks/hero-slider.scss";
+
+

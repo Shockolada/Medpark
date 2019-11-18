@@ -1,0 +1,39 @@
+.slider__buttons {
+  .swiper-pagination-bullet {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+    background: transparent;
+    border: 1px solid transparent;
+    opacity: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 6px;
+      height: 6px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      transition: 0.2s background-color linear;
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        background-color: #d24a43;
+      }
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    border: 1px solid #d24a43;
+
+    &::before {
+      background-color: #d24a43;
+    }
+  }
+}

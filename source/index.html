@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('./html-partials/basic/head.html')
+
+<body>
+
+  @@include('./html-partials/blocks/main/page-header.html')
+
+  <!-- Main Page Content
+  ================================================== -->
+  <main class="">
+
+    @@include('./html-partials/blocks/hero.html')
+    
+    @@include('./html-partials/blocks/company-mission.html')
+    
+    @@include('./html-partials/blocks/team.html')
+    
+    @@include('./html-partials/blocks/stats.html')
+    
+    @@include('./html-partials/blocks/news.html')
+    
+    @@include('./html-partials/blocks/donate.html')
+
+  </main> <!-- / Main Page Content -->
+
+  @@include('./html-partials/blocks/main/page-footer.html')
+
+
+  <!-- Java Script
+  ================================================== -->
+  <script src="js/main.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.hero-slider', {
+      spaceBetween: 30,
+      effect: 'fade',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+
+</body>
+
+</html>

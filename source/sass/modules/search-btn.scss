@@ -1,0 +1,21 @@
+.search-btn {
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 0;
+  
+  &:hover,
+  &:focus {
+    .search-btn__icon {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.search-btn__icon {
+  fill: $color-accent;
+  transition: transform 0.2s linear;
+}

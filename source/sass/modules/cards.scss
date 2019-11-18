@@ -1,0 +1,130 @@
+.cards__wrap {}
+
+.cards {
+  position: relative;
+  @include list-reset;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    right: 30px;
+    bottom: 100px;
+    background-color: #b2b1b1;
+  }
+}
+
+.cards__item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.cards__link {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 0;
+  padding-bottom: 69.15%;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #333333;
+  background-position: center;
+  background-size: cover;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &::before {
+    background-color: rgba(#000000, 0.4);
+  }
+
+  &::after {
+    background-color: rgba($color-accent, 0.7);
+    opacity: 0;
+    transition: 0.3s opacity linear;
+  }
+}
+
+.cards__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: calc(24px + 26 * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cards__content {
+  position: absolute;
+  bottom: 30px;
+  z-index: 1;
+  padding: 30px;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.cards__description {
+  font-size: calc(14px + 2 * ((100vw - 320px) / (1360 - 320)));
+  font-size: 16px;
+  // display: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@media (min-width: $tablet) {
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    // margin-bottom: -30px;
+    padding: 0 2%;
+
+    &::before {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .cards__item {
+    width: 49%;
+  }
+
+  .cards__link {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .cards__description {
+    max-height: 0;
+    margin: 0;
+    transform: translateY(100%);
+
+    transition: 0.3s max-height ease-in-out, 0.3s transform ease-in-out;
+  }
+
+  .cards__link:hover,
+  .cards__link:focus {
+    &::after {
+      opacity: 0;
+    }
+
+    .cards__description {
+      max-height: calc(4 * 16px * 1.2 - 1px);
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (min-width: $desktop_s) {
+  .cards__description {
+    max-width: 70%;
+  }
+}
