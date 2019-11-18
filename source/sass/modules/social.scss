@@ -1,0 +1,30 @@
+.social {
+  display: flex;
+  @include list-reset;
+}
+
+.social__item {
+  margin-right: 7px;
+}
+
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: $color-gray;
+
+  transition: 0.3s background-color linear, 0.3s transform linear;
+}
+
+.social__icon {
+  fill: #ffffff;
+}
+
+.social__link:hover,
+.social__link:focus {
+    background-color: $color-accent;
+    transform: scale(1.1);
+}

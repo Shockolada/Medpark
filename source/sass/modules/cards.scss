@@ -7,11 +7,11 @@
   &::before {
     content: "";
     position: absolute;
-    top: 70px;
-    left: 30px;
-    right: 30px;
-    bottom: 100px;
-    background-color: #b2b1b1;
+    top: 11%;
+    left: 11%;
+    right: 11%;
+    bottom: calc(11% + 30px);
+    background-color: $color-light-gray;
   }
 }
 

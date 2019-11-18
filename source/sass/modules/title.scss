@@ -4,3 +4,9 @@
   font-size: calc(26px + (40 - 26) * ((100vw - 320px) / (1360 - 320)));
   font-weight: 500;
 }
+
+@media (min-width: $tablet) {
+  .title {
+    margin: 60px 0;
+  }
+}
