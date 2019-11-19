@@ -1,3 +1,9 @@
+.page-footer__wrap {
+  align-self: flex-end;
+  width: 100%;
+  margin-top: 50px;
+}
+
 .page-footer {
   padding-top: 40px;
   font-size: 16px;
@@ -96,6 +102,10 @@ a.page-footer__contacts-link:focus {
 }
 
 @media (min-width: $desktop_xs) {
+  .page-footer__wrap {
+    margin-top: 90px;
+  }
+
   .page-footer__item {
     width: 25%;
   }

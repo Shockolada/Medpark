@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+@@include('./html-partials/basic/head.html')
+
+<body>
+
+  @@include('./html-partials/blocks/main/page-header.html')
+
+  @@include('./html-partials/blocks/main/search.html')
+
+  <!-- Main Page Content
+  ================================================== -->
+  <main class="page-content">
+
+    <div class="container">
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="index.html">Principala </a>
+        </li>
+        <li class="breadcrumbs__item">
+          <span class="breadcrumbs__link">Noutăți</span>
+        </li>
+      </ul>
+    </div>
+
+    <section class="container">
+      <h2 class="title">Noutăți</h2>
+
+      @@include('./html-partials/modules/local-search.html')
+
+      @@include('./html-partials/blocks/news-items.html')
+
+      @@include('./html-partials/modules/pagination.html')
+    </section>
+
+  </main> <!-- / Main Page Content -->
+
+  @@include('./html-partials/blocks/main/page-footer.html')
+
+
+  <!-- Java Script
+  ================================================== -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

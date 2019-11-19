@@ -9,6 +9,7 @@
   
   &:hover,
   &:focus {
+    outline: none;
     .search-btn__icon {
       transform: scale(1.2);
     }

@@ -20,9 +20,13 @@
 }
 
 .main-nav__link:hover,
-.main-nav__link:focus {}
+.main-nav__link:focus {
+  color: $color-accent;
+}
 
-.main-nav__link.active {}
+.main-nav__link.active {
+  color: $color-accent;
+}
 
 @media (min-width: $desktop_xs) {
   .main-nav__list {
@@ -36,6 +40,7 @@
 
   .main-nav__item:not(:last-of-type) {
     border: none;
+    // margin-right: 10px;
   }
 
   .main-nav__link {
@@ -43,12 +48,17 @@
     transition: 0.2s color linear, 0.2s background-color linear;
   }
 
-  .main-nav__link:hover,
-  .main-nav__link:focus,
-  .main-nav__link.isOpen,
+  
   .main-nav__link.active {
+
+  }
+
+  // .main-nav__link:hover,
+  // .main-nav__link:focus,
+  .main-nav__link.has-submenu.isOpen {
     color: #ffffff;
     background-color: $color-accent;
+    cursor: default;
 
     .submenu__icon:after {
       border-right: 1px solid #ffffff;

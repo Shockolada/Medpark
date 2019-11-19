@@ -1,5 +1,5 @@
 .news__wrap {
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
 }
 
 .news {
@@ -59,9 +59,9 @@
 }
 
 @media (min-width: $tablet) {
-  .news__wrap {
-    margin-bottom: 70px;
-  }
+  // .news__wrap {
+  //   margin-bottom: 70px;
+  // }
 
   .news__img-link {
     margin-bottom: 40px;
@@ -73,6 +73,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-right: -50px;
+    margin-bottom: -40px;
   }
 
   .news__item {

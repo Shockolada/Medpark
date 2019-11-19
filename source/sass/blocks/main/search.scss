@@ -1,0 +1,32 @@
+.search__area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f7f7f7;
+}
+
+.search {
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 3px 7px 0 rgba(0,0,0,.15);
+}
+
+.search__input {
+  height: 85px;
+  width: 100%;
+}
+
+.search__close-btn {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+@media (min-width: $desktop_s) {
+  .search__close-btn {
+    right: 60px;
+  }
+}

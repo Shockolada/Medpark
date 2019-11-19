@@ -27,12 +27,17 @@
 @import "modules/cards.scss";
 @import "modules/social.scss";
 @import "modules/webit.scss";
+@import "modules/local-search.scss";
+@import "modules/breadcrumbs.scss";
+@import "modules/pagination.scss";
+@import "modules/check.scss";
 
 /* BLOCKS */
 @import "blocks/main/page-header.scss";
 @import "blocks/main/menu.scss";
 @import "blocks/main/main-nav.scss";
 @import "blocks/main/submenu.scss";
+@import "blocks/main/search.scss";
 @import "blocks/main/page-footer.scss";
 
 @import "blocks/languages.scss";

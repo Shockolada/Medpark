@@ -1,0 +1,48 @@
+.pagination__wrap {
+  margin-top: 30px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  @include list-reset;
+}
+
+.pagination__item:not(:last-of-type) {
+  margin-right: 12px;
+}
+
+.pagination__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: transparent;
+  overflow: hidden;
+  color: $color-text;
+
+  text-decoration: none;
+
+  transition: 0.3s color, 0.3s background-color;
+}
+
+a.pagination__link:focus,
+a.pagination__link:hover,
+a.pagination__link.active {
+  color: $color-white;
+  background-color: $color-text;
+}
+
+@media (min-width: $mobile_l) {
+  .pagination {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: $desktop_xs) {
+  .pagination__wrap {
+    margin-top: 40px;
+  }
+}

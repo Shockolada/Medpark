@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+@@include('./html-partials/basic/head.html')
+
+<body>
+
+  @@include('./html-partials/blocks/main/page-header.html')
+
+  @@include('./html-partials/blocks/main/search.html')
+
+  <!-- Main Page Content
+  ================================================== -->
+  <main class="page-content">
+
+    <div class="container">
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="index.html">Principala </a>
+        </li>
+        <li class="breadcrumbs__item">
+          <span class="breadcrumbs__link">Contacte</span>
+        </li>
+      </ul>
+    </div>
+
+    <section class="container contacts">
+      <h2 class="title contacts__title">Contacte</h2>
+      <ul class="contacts__info">
+        <li class="contacts__item">
+          <a href="tel:+37322400040" class="contacts__link">(+373) 22 40 00 40</a>
+        </li>
+        <li class="contacts__item">
+          <a href="mailto:info@medpark.md" class="contacts__link">info@medpark.md</a>
+        </li>
+        <li class="contacts__item">
+          Republica Moldova, Chișinău,<br>
+          Str. A.Doga 24, MD 2024<br>
+          <a href="" class="contacts__link">arata pe harta</a>
+        </li>
+      </ul>
+
+      <div class="form__wrap">
+        <h3 class="form__title">Contactați-ne</h3>
+        <form action="/" class="contacts__form form">
+          <p class="form__item form__item--m">
+            <label class="" for="first-name">Nume*</label>
+            <input type="text" id="first-name">
+          </p>
+          <p class="form__item form__item--m">
+            <label class="" for="last-name">Prenume*</label>
+            <input type="text" id="last-name">
+          </p>
+          <p class="form__item form__item--m">
+            <label class="" for="tel">Telefon</label>
+            <input type="text" id="tel">
+          </p>
+          <p class="form__item form__item--m">
+            <label class="" for="mail">Email</label>
+            <input type="text" id="mail">
+          </p>
+          <p class="form__item form__item">
+            <label class="" for="subject">Subiect*</label>
+            <input type="text" id="subject">
+          </p>
+          <p class="form__item">
+            <label class="" for="message">Mesaj dvs*</label>
+            <textarea name="" id="message" cols="30" rows="10"></textarea>
+          </p>
+
+          <div class="form__submit">
+            <label class="check form__data-confirm">
+              <input class="check__input" name="checkbox_agree" id="data-confirm" type="checkbox">
+              <span class="check__box">
+                <span class="check__mark"></span>
+              </span>
+              Sunt de acord cu <a href="#">„Politica de confidențialitate”</a>.
+            </label>
+
+            <button type="submit">Trimite</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="map"></div>
+
+    <div class="company-info">
+      <h3 class="company-nfo__title">Transportul public:</h3>
+      <ul class="company-info__list">
+        <li class="company-info__item">Microbuze: 117, 186, 184, 107, 110, 155, 127, etc. (către circ)</li>
+        <li class="company-info__item">Troleibuze: 7, 10, 11, 24, 25, etc. (către circ)</li>
+      </ul>
+      <h3 class="company-nfo__title">Informații despre companie:</h3>
+      <ul class="company-info__list">
+        <li>ICS "Health Forever International" SRL</li>
+        <li>Adresa juridică: Republica Moldova, mun. Chișinău, 77 M. Varlaam St.</li>
+        <li>Adresa: Moldova, mun. Chișinău, A. Doga 24</li>
+        <li>Tel +373 22 40 00 40, e-mail: info@medpark.md</li>
+        <li>IDE: 1008600035906</li>
+        <li>IBAN: MD92VI000002251311125MDL</li>
+        <li>Operator de date cu caracter personal Nr. 0000188 - 001</li>
+      </ul>
+    </div>
+
+  </main> <!-- / Main Page Content -->
+
+  @@include('./html-partials/blocks/main/page-footer.html')
+
+
+  <!-- Java Script
+  ================================================== -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

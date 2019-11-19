@@ -47,6 +47,7 @@ $(document).ready(function () {
   }
 
   $(window).resize(function () {
+    // $('.main-nav__link.has-submenu').attr("style", "");
     if ($(window).width() < 940) {
       $('.main-nav__link.has-submenu').off('mouseenter');
       $('.main-nav__item').off('mouseleave');

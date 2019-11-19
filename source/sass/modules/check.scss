@@ -1,0 +1,90 @@
+.check {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.5em;
+  // font-size: 16px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+.check__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.check__box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.1em;
+  height: 1.1em;
+  border: 1px solid #8c97a0;
+
+  transition: 0.2s linear;
+}
+
+.check__mark {
+  position: absolute;
+  top: 17%;
+  left: 15%;
+  width: 70%;
+  height: 50%;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+
+  &::before {
+    content: '';
+    width: 21%;
+    height: 0;
+    background-color: $color-accent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+  }
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 30%;
+    background-color: $color-accent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 30px;
+  }
+}
+
+// Hover
+.check:hover .check__input:not(:disabled)+.check__box {
+  border: 1px solid $color-accent;
+}
+
+.check .check__input:checked+.check__box {
+  border: 1px solid $color-accent;
+
+  .check__mark {
+    &::before {
+      height: 100%;
+      transition: .2s;
+    }
+
+    &::after {
+      width: 100%;
+      transition: .2s 0.2s;
+    }
+  }
+
+  &::after {
+    opacity: 1;
+  }
+}
