@@ -1,0 +1,56 @@
+.contacts {}
+
+.contacts__align-center {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts__info {
+  @include list-reset;
+  margin-bottom: 50px;
+}
+
+.contacts__item {
+  display: flex;
+}
+
+.contacts__item:not(:last-of-type) {
+  margin-bottom: 17px;
+}
+
+.contacts__link {
+  margin-top: 10px;
+  color: $color-text;
+  text-decoration: none;
+
+  a {
+    color: $color-accent;
+  }
+}
+
+a.contacts__link {
+  color: $color-accent;
+}
+
+a.contacts__link--big {
+  margin-top: 5px;
+  font-size: 25px;
+  font-weight: 700;
+  color: $color-text;
+}
+
+.contacts__icon-wrap {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $color-gray;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.contacts__icon {
+  fill: $color-gray;
+}

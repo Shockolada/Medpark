@@ -1,0 +1,11 @@
+.page-title {
+  margin: 30px 0;
+  font-size: calc(26px + (40 - 26)*((100vw - 320px)/(1360 - 320)));
+  font-weight: 400;
+}
+
+@media (min-width: $tablet) {
+  .page-title {
+    margin: 40px 0;
+  }
+}

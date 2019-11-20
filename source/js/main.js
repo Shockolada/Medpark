@@ -58,4 +58,19 @@ $(document).ready(function () {
     }
   });
 
+  /* SEARCH */
+  $('.page-header__search').click(function() {
+    $('body, html').addClass('no-scroll');
+    $('.search__area').fadeIn(400);
+
+    $('.search__close-btn').click(function() {
+      $('body, html').removeClass('no-scroll');
+      $('.search__area').fadeOut(400);
+    });
+  });
+
+  /* VIDEO */
+  $('.text-content iframe').wrap("<div class='text-content__video'></div>");
+  $('.text-content__video').wrap("<div class='text-content__video-wrap'></div>")
+
 });
