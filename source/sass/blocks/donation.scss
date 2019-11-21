@@ -1,0 +1,22 @@
+@media (min-width: $desktop_xs) {
+  .donation {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .donation__title {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .donation__form {
+    width: calc(100% - 410px);
+  }
+
+  .donation__progress {
+    width: 410px;
+    padding-top: 40px;
+  }
+}

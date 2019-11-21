@@ -36,10 +36,10 @@
     height: 50px;
     border: 1px solid #e6e7e8;
     border-radius: 30px;
+    font-size: 18px;
     background-color: #e6e7e8;
     outline: none;
     padding: 10px 20px;
-
   }
 
   textarea {
@@ -47,11 +47,22 @@
     width: 100%;
     height: 160px;
     padding: 10px 20px;
+    font-size: 18px;
     resize: none;
     border: 1px solid #e6e7e8;
     border-radius: 30px;
     outline: none;
   }
+}
+
+.form__item--bordered {
+  input {
+    background-color: transparent;
+  }
+}
+
+.form__check-group {
+  width: 100%;
 }
 
 .form__check {
@@ -89,16 +100,21 @@
   margin: 0;
 }
 
+.form__user-info {
+  width: 100%;
+}
+
 .form__user-item {
   margin: 0;
 }
 
 @media (min-width: $tablet) {
-  .form {
+  .form,
+  .form__set {
     display: flex;
     flex-wrap: wrap;
   }
-
+ 
   .form__item--m {
     width: calc(50% - 10px);
   }

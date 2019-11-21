@@ -3,7 +3,6 @@
   border-left: 1px solid $color-lightest-gray;
 
   counter-reset: steps;
-
 }
 
 .donate-steps__progress {
@@ -40,6 +39,7 @@
   padding: 20px;
   padding-left: 70px;
   font-size: calc(20px + (25 - 20)*((100vw - 320px)/(1360 - 320)));
+  cursor: pointer;
 
   &::before {
     content: counter(steps);

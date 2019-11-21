@@ -85,8 +85,34 @@ $(document).ready(function () {
 
   /* FORM */
   $('.donate-other-summ').change(function () {
-    if(this.checked) {
+    if (this.checked) {
       $('.other-summ').focus();
     }
   });
+
+  $('.other-summ').focus(function () {
+    $('.donate-other-summ').prop('checked', true);
+  });
+
+
+  $('.donate-step__tab-content input[required]').change(function () {
+    var invalidFormFields = $(this).closest('.donate-step__tab-content').find('input[required]').val = "";
+    console.log(invalidFormFields);
+
+    if (invalidFormFields) {
+      $(this).closest('.donate-step__tab-content').find('.form__btn').prop('disabled', false);
+    }
+  });
+  
+  // $('.donate-step__tab-content input[required]').keypress(function () {
+  //   if (!invalidFormFields) {
+  //     console.log(invalidFormFields);
+
+  //     $(this).closest('.donate-step__tab-content').find('.form__btn').prop('disabled', false);
+  //   }
+  // });
+
+  // jQuery("#sender_container input.required").filter(function() {
+  //   return !this.value;
+  // }).addClass("error");​
 });

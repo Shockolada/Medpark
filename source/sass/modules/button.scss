@@ -9,6 +9,8 @@
   background-color: $color-accent;
   text-transform: uppercase;
   outline: none;
+  font-size: 15px;
+  font-weight: 700;
 
   transition: all 0.3s;
 }
@@ -38,7 +40,7 @@
 
 .button:hover:not(:disabled),
 .button:focus:not(:disabled) {
-  
+  background-color: $color-gray;
 }
 
 .button--transparent:hover:not(:disabled),
