@@ -11,7 +11,184 @@
 
   <!-- Main Page Content
   ================================================== -->
-  <main class="">
+  <main class="page-content">
+
+    <div class="container">
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="index.html">Principala </a>
+        </li>
+        <li class="breadcrumbs__item">
+          <span class="breadcrumbs__link">Donează</span>
+        </li>
+      </ul>
+    </div>
+
+    <section class="container container--small">
+      <h1 class="page-title">Donează</h1>
+
+      <ul class="progress donate-steps__progress">
+        <li class="progress__point active done">Selectați suma donației</li>
+        <li class="progress__point active">Alegerea metodei de donare</li>
+        <li class="progress__point">Confirmarea tuturor datelor introduse</li>
+      </ul>
+
+      <form id="donate-form" class="form" action="/">
+        <ul class="donate-steps">
+          <li class="donate-step donate-step--ready">
+            <h2 class="donate-step__tab-link tab-link done">Selectați suma donației</h2>
+            <div class="donate-step__tab-content tab-content">
+              <div class="form__check-group">
+                <label class="check form__check">
+                  <input class="check__input" type="radio" name="summ" value="100mdl" checked="">
+                  <span class="check__radio-box"></span>
+                  100 MDL
+                </label>
+                <label class="check form__check">
+                  <input class="check__input" type="radio" name="summ" value="200mdl">
+                  <span class="check__radio-box"></span>
+                  200 MDL
+                </label>
+                <label class="check form__check">
+                  <input class="check__input" type="radio" name="summ" value="500mdl">
+                  <span class="check__radio-box"></span>
+                  500 MDL
+                </label>
+                <label class="check form__check">
+                  <input class="check__input" type="radio" name="summ" value="1000mdl">
+                  <span class="check__radio-box"></span>
+                  1000 MDL
+                </label>
+                <label class="check form__check">
+                  <input class="check__input" type="radio" name="summ" value="5000mdl">
+                  <span class="check__radio-box"></span>
+                  5000 MDL
+                </label>
+              </div>
+              <div class="form__check-group">
+                <label class="check form__check">
+                  <input class="check__input" type="radio" name="summ" value="100eur" checked>
+                  <span class="check__radio-box"></span>
+                  100 EUR
+                </label>
+                <label class="check form__check">
+                  <input class="check__input" type="radio" name="summ" value="200eur">
+                  <span class="check__radio-box"></span>
+                  200 EUR
+                </label>
+              </div>
+              <div class="form__check-group">
+                <label class="check form__check check--bold">
+                  <input class="check__input donate-other-summ" type="radio" name="summ" value="other">
+                  <span class="check__radio-box"></span>
+                  Altă sumă
+                </label>
+                <p class="form__item form__item--m form__item--other">
+                  <input class="other-summ" type="text" placeholder="Întroduceți suma dorită">
+                </p>
+              </div>
+
+              <p class="form__item form__item--m">
+                <label class="" for="first-name">Nume*</label>
+                <input type="text" id="first-name" required>
+              </p>
+              <p class="form__item form__item--m">
+                <label class="" for="last-name">Prenume*</label>
+                <input type="text" id="last-name" required>
+              </p>
+              <p class="form__item form__item--m">
+                <label class="" for="tel">Numărul de telefon*</label>
+                <input type="tel" id="tel" required>
+              </p>
+              <p class="form__item form__item--m">
+                <label class="" for="mail">E-mail*</label>
+                <input type="email" id="mail" required>
+              </p>
+              <p class="form__item form__item">
+                <label class="" for="subject">Subiect*</label>
+                <input type="text" id="subject" required>
+              </p>
+              <p class="form__item">
+                <label class="" for="message">Mesaj dvs*</label>
+                <textarea name="" id="message" cols="30" rows="10" required></textarea>
+              </p>
+              <p class="form__item form__item--m">
+                <button class="button form__btn" type="button" disabled>Continua</button>
+              </p>
+            </div>
+          </li>
+          <li class="donate-step">
+            <h2 class="donate-step__tab-link tab-link">Alegeți metoda de donare</h2>
+            <div class="donate-step__tab-content tab-content">
+              <div class="form__check-group">
+                <label class="check form__check">
+                  <input class="check__input" type="radio" name="payment-method" value="card" checked="">
+                  <span class="check__radio-box"></span>
+                  Card bancar
+                </label>
+                <label class="check form__check">
+                  <input class="check__input" type="radio" name="payment-method" value="transfer">
+                  <span class="check__radio-box"></span>
+                  Transfer
+                </label>
+              </div>
+              <div class="form__check-group">
+                <div class="form__item--note">
+                  <label class="check form__check">
+                    <input class="check__input" type="radio" name="payment-frequence" value="once" checked="">
+                    <span class="check__radio-box"></span>
+                    Donație unică
+                  </label>
+                </div>
+
+                <div class="form__item--note">
+                  <label class="check form__check">
+                    <input class="check__input" type="radio" name="payment-frequence" value="regular">
+                    <span class="check__radio-box"></span>
+                    Ttanzacție lunară recurentă
+                  </label>
+                  <p class="form__item-note">*Tranzacție lunară recurentă - prin continuarea acestei tranzacții sunteți
+                    de
+                    acord
+                    cu efectuarea automată a următorilori plăți. Intervalul dintre plăți va fi de 28 zile.
+                    Plățile recurente se vor efectua timp de un an de la prima plată. Puteți renunța în
+                    orice moment la procesarea automată a plăților recurente contactînd Fundația
+                    Medpark sau la adresa info@medpark.md.</p>
+                </div>
+              </div>
+
+              <p class="form__item form__item--m">
+                <button type="button" class="button form__btn" >Continua</button>
+              </p>
+            </div>
+          </li>
+
+          <li class="donate-step">
+            <h2 class="donate-step__tab-link tab-link">Confirmați tuturor datelor introduse</h2>
+            <div class="donate-step__tab-content tab-content">
+              <div class="form__user-info">
+                <h3 class="form__title--small">Date personale</h3>
+                <p class="form__user-item" id="user-name">Elena Vasilache</p>
+                <p class="form__user-item" id="user-tel">069 152 365</p>
+                <p class="form__user-item" id="user-mail">elena@gmai.com</p>
+                <p class="form__user-item" id="user-address">str. Burebista 24, ap. 15, Chisinau, Republica Moldova</p>
+                <p class="form__user-item">Comentariu:</p>
+                <p class="form__user-item" id="user-message">Sanatate tuturor!</p>
+                <h3 class="form__title--small">Suma donației</h3>
+                <p class="form__user-item" id="payment-summ">200 EUR</p>
+                <h3 class="form__title--small">Metoda de donare</h3>
+                <p class="form__user-item" id="payment-method">Transfer</p>
+                <p class="form__user-item" id="payment-frequence">Tranzacție lunară recurentă</p>
+              </div>
+              <p class="form__item form__item--m">
+                <button class="button form__btn" type="submit" >Confirma</button>
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </form>
+    </section>
 
   </main> <!-- / Main Page Content -->
 

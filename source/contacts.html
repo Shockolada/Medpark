@@ -24,7 +24,7 @@
       </ul>
     </div>
 
-    <section class="container contacts">
+    <section class="container container--small contacts">
       <h2 class="title contacts__title">Contacte</h2>
       <div class="contacts__align-center">
         <ul class="contacts__info">
@@ -61,32 +61,32 @@
         </ul>
       </div>
 
-      <div class="form__wrap">
+      <div class="form__wrap contacts__form-wrap">
         <h3 class="form__title">Contactați-ne</h3>
         <form action="/" class="contacts__form form">
           <p class="form__item form__item--m">
             <label class="" for="first-name">Nume*</label>
-            <input type="text" id="first-name">
+            <input type="text" id="first-name" required>
           </p>
           <p class="form__item form__item--m">
             <label class="" for="last-name">Prenume*</label>
-            <input type="text" id="last-name">
+            <input type="text" id="last-name" required>
           </p>
           <p class="form__item form__item--m">
-            <label class="" for="tel">Telefon</label>
-            <input type="text" id="tel">
+            <label class="" for="tel">Numărul de telefon*</label>
+            <input type="tel" id="tel" required>
           </p>
           <p class="form__item form__item--m">
-            <label class="" for="mail">Email</label>
-            <input type="text" id="mail">
+            <label class="" for="mail">E-mail*</label>
+            <input type="email" id="mail" required>
           </p>
           <p class="form__item form__item">
             <label class="" for="subject">Subiect*</label>
-            <input type="text" id="subject">
+            <input type="text" id="subject" required>
           </p>
           <p class="form__item">
             <label class="" for="message">Mesaj dvs*</label>
-            <textarea name="" id="message" cols="30" rows="10"></textarea>
+            <textarea name="" id="message" cols="30" rows="10" required></textarea>
           </p>
 
           <div class="form__submit">
@@ -98,17 +98,21 @@
               Sunt de acord cu <a href="#">„Politica de confidențialitate”</a>.
             </label>
 
-            <button type="submit">Trimite</button>
+            <button class="button button--large button--transparent" type="submit" disabled>Trimite</button>
           </div>
         </form>
       </div>
     </section>
 
-    <div class="map"></div>
+    <div class="map__wrap">
+      <div class="map container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.2316354538293!2d28.851611815806244!3d47.035685335233836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c5038a107ef%3A0x17eedf9ad8d51248!2zVGVyZW4gZGUgdGVuaXMsIFN0cmFkYSBBbmRyZWkgRG9nYSAyNC8xLCBDaGnImWluxIN1LCDQnNC-0LvQtNCw0LLQuNGP!5e0!3m2!1sru!2s!4v1574330539435!5m2!1sru!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+    </div>
 
-    <div class="company-info">
+    <div class="company-info container">
       <h3 class="company-nfo__title">Transportul public:</h3>
-      <ul class="company-info__list">
+      <ul class="company-info__list company-info__list--dotted">
         <li class="company-info__item">Microbuze: 117, 186, 184, 107, 110, 155, 127, etc. (către circ)</li>
         <li class="company-info__item">Troleibuze: 7, 10, 11, 24, 25, etc. (către circ)</li>
       </ul>

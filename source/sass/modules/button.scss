@@ -1,8 +1,48 @@
 .button {
+  padding: 15px 20px;
   border: none;
+  border-radius: 30px;
   text-decoration: none;
+  min-height: 50px;
   cursor: pointer;
+  color: $color-white;
+  background-color: $color-accent;
+  text-transform: uppercase;
+  outline: none;
+
+  transition: all 0.3s;
 }
 
-.button:hover,
-.button:focus {}
+.button--transparent {
+  border: 1px solid $color-accent;
+  background-color: transparent;
+  color: $color-text;
+}
+
+.button--transparent:disabled {
+  color: $color-light-gray;
+  border-color: $color-light-gray;
+  cursor: not-allowed;
+}
+
+.button--large {
+  min-height: 80px;
+  border-radius: 50px;
+  font-size: 23px;
+}
+
+.button:disabled {
+  background-color: $color-lightest-gray;
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled),
+.button:focus:not(:disabled) {
+  
+}
+
+.button--transparent:hover:not(:disabled),
+.button--transparent:focus:not(:disabled) {
+  background-color: $color-accent;
+  color: $color-white;
+}

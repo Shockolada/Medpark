@@ -1,4 +1,6 @@
-.contacts {}
+.contacts {
+  margin-bottom: 50px;
+}
 
 .contacts__align-center {
   display: flex;
@@ -8,6 +10,7 @@
 .contacts__info {
   @include list-reset;
   margin-bottom: 50px;
+  font-size: 20px;
 }
 
 .contacts__item {
@@ -19,7 +22,7 @@
 }
 
 .contacts__link {
-  margin-top: 10px;
+  margin-top: 8px;
   color: $color-text;
   text-decoration: none;
 
@@ -53,4 +56,25 @@ a.contacts__link--big {
 
 .contacts__icon {
   fill: $color-gray;
+}
+
+@media (min-width: $desktop_xs) {
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contacts__align-center {
+    width: 410px;
+    padding-top: 90px;
+  }
+
+  .contacts__form-wrap {
+    width: calc(100% - 410px);
+  }
+
+  .contacts__title {
+    width: 100%;
+    text-align: left;
+  }
 }

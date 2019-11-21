@@ -1,0 +1,53 @@
+.progress {
+  @include list-reset;
+}
+
+.progress__point {
+  position: relative;
+  padding-left: 30px;
+  cursor: default;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    border: 1px solid $color-lightest-gray;
+    border-radius: 50%;
+    background-color: $color-lightest-gray;
+  }
+}
+
+.progress__point:not(:last-of-type) {
+  margin-bottom: 50px;
+ 
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -46px;
+    left: 10px;
+    width: 1px;
+    height: 40px;
+    background-color: $color-lightest-gray;
+  }
+}
+
+.progress__point.active {
+  &::before {
+    background-color: transparent;
+    border: 1px solid $color-accent;
+  }
+}
+
+.progress__point.done {
+  &::before {
+    background-color: $color-accent;
+    border: 1px solid $color-accent;
+  }
+
+  &::after {
+    background-color: $color-accent;
+  }
+}

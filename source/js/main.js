@@ -59,11 +59,11 @@ $(document).ready(function () {
   });
 
   /* SEARCH */
-  $('.page-header__search').click(function() {
+  $('.page-header__search').click(function () {
     $('body, html').addClass('no-scroll');
     $('.search__area').fadeIn(400);
 
-    $('.search__close-btn').click(function() {
+    $('.search__close-btn').click(function () {
       $('body, html').removeClass('no-scroll');
       $('.search__area').fadeOut(400);
     });
@@ -73,4 +73,20 @@ $(document).ready(function () {
   $('.text-content iframe').wrap("<div class='text-content__video'></div>");
   $('.text-content__video').wrap("<div class='text-content__video-wrap'></div>")
 
+  /* FORM BUTTON */
+  $('#data-confirm').closest('form').find('button:submit').prop('disabled', true);
+  $('#data-confirm').change(function () {
+    if ($('#data-confirm').is(':checked')) {
+      $(this).closest('form').find('button:submit').prop('disabled', false);
+    } else {
+      $(this).closest('form').find('button:submit').prop('disabled', true);
+    }
+  });
+
+  /* FORM */
+  $('.donate-other-summ').change(function () {
+    if(this.checked) {
+      $('.other-summ').focus();
+    }
+  });
 });

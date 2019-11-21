@@ -1,0 +1,34 @@
+.company-info {
+  font-size: 19px;
+}
+
+.company-nfo__title {
+  margin: 20px 0;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.company-info__list {
+  @include list-reset;
+  line-height: 1.4;
+}
+
+.company-info__list--dotted {
+  li {
+    position: relative;
+    margin: 0;
+    text-indent: 18px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color-accent;
+
+    }
+  }
+}
