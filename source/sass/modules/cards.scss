@@ -71,11 +71,11 @@
 }
 
 .cards__description {
-  font-size: calc(14px + 2 * ((100vw - 320px) / (1360 - 320)));
-  font-size: 16px;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+  font-size: calc(16px + 4 * ((100vw - 320px) / (1920 - 320)));
+  // font-size: 16px;
+  // display: -webkit-box;
+  // -webkit-line-clamp: 4;
+  // -webkit-box-orient: vertical;
   
   max-width: 500px;
 
@@ -105,8 +105,13 @@
     }
   }
 
+  .cards__title {
+    margin-bottom: 30px;
+  }
+
   .cards__description {
     display: -webkit-box;
+    display: block;
     max-height: 0;
     margin: 0;
     transform: translateY(100%);
@@ -121,7 +126,7 @@
     }
 
     .cards__description {
-      max-height: calc(4 * 16px * 1.2 - 1px);
+      max-height: calc(8 * 16px * 1.2 - 1px);
       transform: translateY(0);
     }
   }

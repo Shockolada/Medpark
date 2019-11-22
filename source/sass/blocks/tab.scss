@@ -1,7 +1,15 @@
-.tab__content {
+.tab-content {
   display: none;
 }
 
-.tab__content.active {
+.tab-content.active {
   display: block;
+}
+
+.tab-link {
+  cursor: default;
+} 
+
+.tab-link.done {
+  cursor: pointer;
 }

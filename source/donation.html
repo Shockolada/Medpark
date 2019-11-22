@@ -28,16 +28,16 @@
       <h1 class="title donation__title">Donează</h1>
 
       <ul class="progress donation__progress">
-        <li class="progress__point active done">Selectați suma donației</li>
-        <li class="progress__point active">Alegerea metodei de donare</li>
+        <li class="progress__point active">Selectați suma donației</li>
+        <li class="progress__point">Alegerea metodei de donare</li>
         <li class="progress__point">Confirmarea tuturor datelor introduse</li>
       </ul>
 
       <form id="donate-form" class="form donation__form" action="/">
         <ul class="donate-steps">
-          <li class="donate-step">
-            <h2 class="donate-step__tab-link tab__link done">Selectați suma donației</h2>
-            <div class="donate-step__tab-content tab__content active">
+          <li class="donate-step tab-wrap">
+            <h2 class="donate-step__tab-link tab-link ">Selectați suma donației</h2>
+            <div class="donate-step__tab-content tab-content active">
               <div class="form__set">
                 <div class="form__check-group">
                   <label class="check form__check">
@@ -114,14 +114,14 @@
                   <textarea name="" id="message" cols="30" rows="10" required></textarea>
                 </p>
                 <p class="form__item form__item--m">
-                  <button class="button form__btn" type="button" disabled>Continua</button>
+                  <button class="button form__btn button-next" type="button" disabled>Continua</button>
                 </p>
               </div>
             </div>
           </li>
-          <li class="donate-step">
-            <h2 class="donate-step__tab-link tab__link">Alegeți metoda de donare</h2>
-            <div class="donate-step__tab-content tab__content">
+          <li class="donate-step tab-wrap">
+            <h2 class="donate-step__tab-link tab-link">Alegeți metoda de donare</h2>
+            <div class="donate-step__tab-content tab-content">
               <div class="form__set">
                 <div class="form__check-group">
                   <label class="check form__check">
@@ -135,8 +135,8 @@
                     Transfer
                   </label>
                 </div>
-                <div class="form__check-group">
-                  <div class="form__item--note">
+                <div class="form__check-group form__check-group--in-row">
+                  <div class="form__check-item">
                     <label class="check form__check">
                       <input class="check__input" type="radio" name="payment-frequence" value="once" checked="">
                       <span class="check__radio-box"></span>
@@ -144,7 +144,7 @@
                     </label>
                   </div>
   
-                  <div class="form__item--note">
+                  <div class="form__check-item">
                     <label class="check form__check">
                       <input class="check__input" type="radio" name="payment-frequence" value="regular">
                       <span class="check__radio-box"></span>
@@ -161,15 +161,15 @@
                 </div>
   
                 <p class="form__item form__item--m">
-                  <button type="button" class="button form__btn" >Continua</button>
+                  <button type="button" class="button form__btn button-next" >Continua</button>
                 </p>
               </div>
             </div>
           </li>
 
-          <li class="donate-step">
-            <h2 class="donate-step__tab-link tab__link">Confirmați tuturor datelor introduse</h2>
-            <div class="donate-step__tab-content tab__content">
+          <li class="donate-step tab-wrap">
+            <h2 class="donate-step__tab-link tab-link">Confirmați tuturor datelor introduse</h2>
+            <div class="donate-step__tab-content tab-content">
               <div class="form__set">
                 <div class="form__user-info">
                   <h3 class="form__title--small">Date personale</h3>

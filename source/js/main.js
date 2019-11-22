@@ -83,7 +83,9 @@ $(document).ready(function () {
     }
   });
 
+
   /* FORM */
+  /* CONNECT INPUT & CHECKBOX */
   $('.donate-other-summ').change(function () {
     if (this.checked) {
       $('.other-summ').focus();
@@ -95,24 +97,55 @@ $(document).ready(function () {
   });
 
 
-  $('.donate-step__tab-content input[required]').change(function () {
-    var invalidFormFields = $(this).closest('.donate-step__tab-content').find('input[required]').val = "";
-    console.log(invalidFormFields);
-
-    if (invalidFormFields) {
-      $(this).closest('.donate-step__tab-content').find('.form__btn').prop('disabled', false);
+  /* VALIDATE FORM */
+  $('.donate-step__tab-content input').filter('[required]:visible').change(function () {
+    var buttonNext = $(this).closest('.donate-step__tab-content').find('.form__btn');
+    if (isEmptyFields()) {
+      buttonNext.prop('disabled', false);
+      $(this).closest('.donate-step').find('.tab-link').addClass('done');
+      $('.progress__point:eq(0)').addClass('done');
+      $('.progress__point:eq(1)').addClass('active');
+    } else {
+      buttonNext.prop('disabled', true);
     }
   });
-  
-  // $('.donate-step__tab-content input[required]').keypress(function () {
-  //   if (!invalidFormFields) {
-  //     console.log(invalidFormFields);
 
-  //     $(this).closest('.donate-step__tab-content').find('.form__btn').prop('disabled', false);
-  //   }
-  // });
+  $('.donate-step__tab-content input').filter('[required]:visible').keydown(function () {
+    if (isEmptyFields()) {
+      buttonNext.prop('disabled', false);
+      $(this).closest('.donate-step').find('.tab-link').addClass('done');
+    } else {
+      buttonNext.prop('disabled', true);
+    }
+  });
 
-  // jQuery("#sender_container input.required").filter(function() {
-  //   return !this.value;
-  // }).addClass("error");​
+  function isEmptyFields() {
+    var emptyFields = true;
+    $('input').filter('[required]:visible').each(function () {
+      if ($(this).val() == '') {
+        emptyFields = false;
+      }
+    });
+    return emptyFields;
+  }
+
+
+  /* TABS */
+  /* ОТКРЫТЬ СЛЕДУЮЩИЙ БЛОК ПРИ КЛИКЕ НА CONTINUE */
+  $('.tab-content .button-next').click(function () {
+    $(this).closest('.donate-step').find('.tab-link').addClass('done');
+    $('.progress__point:eq(1)').addClass('done');
+    $('.progress__point:eq(2)').addClass('active');
+    $(this).closest('.tab-content').stop().slideUp(300);
+    $(this).closest('.tab-wrap').next().find('.tab-content').stop().slideDown(300);
+  });
+
+  /* ОТКРЫТЬ БЛОК ЕСЛИ КЛИК ПО ЕГО ХЭДЕРУ */
+  $('.tab-link').click(function () {
+
+    if ($(this).hasClass('done')) {
+      $('.tab-content').stop().slideUp(300);
+      $(this).closest('.tab-wrap').find('.tab-content').stop().slideDown(300);
+    }
+  });
 });

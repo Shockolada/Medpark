@@ -14,15 +14,15 @@
   <main class="">
 
     @@include('./html-partials/blocks/hero.html')
-    
+
     @@include('./html-partials/blocks/company-mission.html')
-    
+
     @@include('./html-partials/blocks/team.html')
-    
+
     @@include('./html-partials/blocks/stats.html')
-    
+
     @@include('./html-partials/blocks/news-block.html')
-    
+
   </main> <!-- / Main Page Content -->
 
   @@include('./html-partials/blocks/main/page-footer.html')
@@ -40,6 +40,17 @@
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+      },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '"><svg class="slider__dot" viewBox="0 0 44 44"><circle cx="22" cy="22" r="12"></circle><circle cx="22" cy="22" r="21"></circle></svg></span>';
+        },
       },
     });
   </script>

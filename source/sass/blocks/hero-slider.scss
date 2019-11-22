@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 70px);
   padding-bottom: 40px;
   color: #ffffff;
   text-decoration: none;
@@ -44,8 +44,15 @@
   font-size: calc(20px + 5 * ((100vw - 320px) / (1360 - 320)));
 }
 
+@media (min-width: $desktop_xs) {
+  .hero-slider__slide {
+    align-items: center;
+    padding-bottom: 80px;
+  }
+}
+
 @media (min-width: $desktop_m) {
   .hero-slider__slide-container {
-    max-width: 70%;
+    max-width: 65%;
   }
 }

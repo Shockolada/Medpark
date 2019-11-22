@@ -61,6 +61,10 @@
   }
 }
 
+.form__item-note {
+  padding-left: 1.5em;
+}
+
 .form__check-group {
   width: 100%;
 }
@@ -106,6 +110,16 @@
 
 .form__user-item {
   margin: 0;
+}
+
+@media (min-width: $tablet_s) {
+  .form__check-group--in-row {
+    display: flex;
+  }
+
+  .form__check-item:first-of-type {
+    flex-shrink: 0;
+  }
 }
 
 @media (min-width: $tablet) {

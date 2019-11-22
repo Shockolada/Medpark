@@ -32,6 +32,7 @@
   .main-nav__list {
     display: flex;
     justify-content: flex-end;
+    margin-right: -15px;
   }
 
   .main-nav__item {
@@ -44,6 +45,7 @@
   }
 
   .main-nav__link {
+    height: 60px;
     padding: 10px 15px;
     transition: 0.2s color linear, 0.2s background-color linear;
   }
@@ -70,5 +72,11 @@
     .submenu__icon:after {
       transform: rotate(-135deg);
     }
+  }
+}
+
+@media (min-width: $desktop_s) {
+  .main-nav__item:not(:last-of-type) {
+    margin-right: 15px;
   }
 }

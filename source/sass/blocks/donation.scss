@@ -1,3 +1,7 @@
+.donation__progress {
+  margin-bottom: 50px;
+}
+
 @media (min-width: $desktop_xs) {
   .donation {
     display: flex;
@@ -17,6 +21,7 @@
 
   .donation__progress {
     width: 410px;
+    margin: 0;
     padding-top: 40px;
   }
 }

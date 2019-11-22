@@ -17,6 +17,7 @@
     border: 1px solid $color-lightest-gray;
     border-radius: 50%;
     background-color: $color-lightest-gray;
+
   }
 }
 
@@ -31,6 +32,8 @@
     width: 1px;
     height: 40px;
     background-color: $color-lightest-gray;
+
+    transition: 0.2s background-color;
   }
 }
 
@@ -38,6 +41,7 @@
   &::before {
     background-color: transparent;
     border: 1px solid $color-accent;
+    transition: 0.2s background-color;
   }
 }
 

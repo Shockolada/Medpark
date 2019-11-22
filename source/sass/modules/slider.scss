@@ -1,39 +1,73 @@
 .slider__buttons {
   .swiper-pagination-bullet {
     position: relative;
-    width: 16px;
-    height: 16px;
+    width: auto;
+    height: auto;
     margin: 0 5px;
     background: transparent;
-    border: 1px solid transparent;
     opacity: 1;
+  }
+}
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 6px;
-      height: 6px;
-      background-color: #ffffff;
-      border-radius: 50%;
-      transition: 0.2s background-color linear;
-    }
+.slider__dot {
+  display: block;
+  position: relative;
+  width: calc(32px + 12 * ((100vw - 320px) / (1920 - 320)));
+  height: calc(32px + 12 * ((100vw - 320px) / (1920 - 320)));
+  cursor: pointer;
+}
 
-    &:hover,
-    &:focus {
-      &::before {
-        background-color: #d24a43;
-      }
-    }
+.slider__dot circle:first-child {
+  fill: #ffffff;
+  transform: scale(0.5);
+  transform-origin: center;
+
+  transition: transform 0.7s, fill 0.5s;
+}
+
+.slider__dot circle:last-child {
+  fill: none;
+  stroke-width: 2px;
+  stroke: #d24a43;
+  stroke-dasharray: 132;
+  stroke-dashoffset: 132;
+}
+
+.slider__buttons .swiper-pagination-bullet-active {
+  .slider__dot circle:first-child {
+    fill: #d24a43;
+    transform: scale(0.9);
   }
 
-  .swiper-pagination-bullet-active {
-    border: 1px solid #d24a43;
+  .slider__dot circle:last-child {
+    animation: dotsAnimation 4s linear;
+  }
+}
 
-    &::before {
-      background-color: #d24a43;
+@keyframes dotsAnimation {
+  0% {
+    stroke-dasharray: 132;
+    stroke-dashoffset: 132
+  }
+
+  to {
+    stroke-dasharray: 132;
+    stroke-dashoffset: 0
+  }
+}
+
+
+.slider__buttons {
+  .swiper-pagination-bullet:hover,
+  .swiper-pagination-bullet:focus {
+    .slider__dot circle:first-child {
+      fill: #d24a43;
     }
+  }
+}
+
+@media (min-width: $desktop_xs) {
+  .slider__buttons {
+    bottom: 20px !important;
   }
 }
