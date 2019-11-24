@@ -50,17 +50,12 @@
     transition: 0.2s color linear, 0.2s background-color linear;
   }
 
-  
-  .main-nav__link.active {
-
-  }
-
   // .main-nav__link:hover,
   // .main-nav__link:focus,
   .main-nav__link.has-submenu.isOpen {
     color: #ffffff;
     background-color: $color-accent;
-    cursor: default;
+    // cursor: default;
 
     .submenu__icon:after {
       border-right: 1px solid #ffffff;

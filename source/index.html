@@ -34,9 +34,10 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper('.hero-slider', {
+    var heroSlider = new Swiper('.hero-slider', {
       spaceBetween: 30,
       effect: 'fade',
+      speed: 600,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -52,6 +53,16 @@
           return '<span class="' + className + '"><svg class="slider__dot" viewBox="0 0 44 44"><circle cx="22" cy="22" r="12"></circle><circle cx="22" cy="22" r="21"></circle></svg></span>';
         },
       },
+
+    });
+
+    $(document).scroll(function () {
+      if ($(document).scrollTop() + $(window).height() > $('.hero-slider').offset().top && $(document).scrollTop() - $('.hero-slider').offset().top < $('.hero-slider').height()) {
+        heroSlider.autoplay.start();
+      }
+      else{
+        heroSlider.autoplay.stop();
+      }
     });
   </script>
 

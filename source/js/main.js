@@ -111,6 +111,7 @@ $(document).ready(function () {
   });
 
   $('.donate-step__tab-content input').filter('[required]:visible').keydown(function () {
+    var buttonNext = $(this).closest('.donate-step__tab-content').find('.form__btn');
     if (isEmptyFields()) {
       buttonNext.prop('disabled', false);
       $(this).closest('.donate-step').find('.tab-link').addClass('done');
@@ -138,6 +139,16 @@ $(document).ready(function () {
     $('.progress__point:eq(2)').addClass('active');
     $(this).closest('.tab-content').stop().slideUp(300);
     $(this).closest('.tab-wrap').next().find('.tab-content').stop().slideDown(300);
+
+    /* PUT FIELDS VALUES */
+    $('#user-name').text(userName);
+    $('#user-tel').text(userTel);
+    $('#user-mail').text(userEmail);
+    $('#user-address').text(subject);
+    $('#user-message').text(userMessage);
+    $('#payment-summ').text(summ);
+    $('#payment-method').text(payMethod);
+    $('#payment-frequence').text(payFrequence);
   });
 
   /* ОТКРЫТЬ БЛОК ЕСЛИ КЛИК ПО ЕГО ХЭДЕРУ */
@@ -148,4 +159,50 @@ $(document).ready(function () {
       $(this).closest('.tab-wrap').find('.tab-content').stop().slideDown(300);
     }
   });
+
+  /* GET FIELDS VALUES */
+  var summ = $('input[name=summ]:checked').closest('label').text();
+  $('input[name=summ]').change(function () {
+    summ = $(this).closest('label').text();
+    if ($('.donate-other-summ').is(':checked')) {
+      summ = $('.other-summ').val();
+    }
+    return summ;
+  });
+
+  var userName = $('#first-name').val();
+  var userLastName = $('#last-name').val();
+  var tel = $('#tel').val();
+  var email = $('#mail').val();
+  var subject = $('#subject').val();
+  var message = $('#message').val();
+  $('#first-name').change(function () {
+    userName = $('#first-name').val();
+  });
+  $('#last-name').change(function () {
+    userLastName = $('#last-name').val();
+  });
+  $('#tel').change(function () {
+    userTel = $('#tel').val();
+  });
+  $('#mail').change(function () {
+    userEmail = $('#mail').val();
+  });
+  $('#subject').change(function () {
+    subject = $('#subject').val();
+  });
+  $('#message').change(function () {
+    userMessage = $('#message').val();
+  });
+
+  var payMethod = $('input[name=payment-method]:checked').closest('label').text();
+  $('input[name=payment-method]').change(function () {
+    payMethod = $('input[name=payment-method]:checked').closest('label').text();
+  });
+
+  var payFrequence = $('input[name=payment-frequence]:checked').closest('label').text();
+  $('input[name=payment-frequence]').change(function () {
+    payFrequence = $('input[name=payment-frequence]:checked').closest('label').text();
+  });
+
 });

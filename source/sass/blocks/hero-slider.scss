@@ -36,12 +36,12 @@
 
 .hero-slider__title {
   // font-size: 8vw;
-  font-size: calc(24px + 26 * ((100vw - 320px) / (1360 - 320)));
+  font-size: calc(24px + 26 * ((100vw - 320px) / (1920 - 320)));
   font-weight: 700;
 }
 
 .hero-slider__description {
-  font-size: calc(20px + 5 * ((100vw - 320px) / (1360 - 320)));
+  font-size: calc(20px + 5 * ((100vw - 320px) / (1920 - 320)));
 }
 
 @media (min-width: $desktop_xs) {
