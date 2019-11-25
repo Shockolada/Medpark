@@ -1,5 +1,5 @@
 .news__wrap {
-  // margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .news {
@@ -64,6 +64,10 @@
 }
 
 @media (min-width: $tablet) {
+  .news__wrap {
+    margin-top: 80px;
+  }
+
   .news__date-wrap {
     margin: 40px 0;
     margin-bottom: 80px;

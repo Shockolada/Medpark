@@ -1,4 +1,6 @@
-.cards__wrap {}
+.cards__wrap {
+  margin-top: 50px;
+}
 
 .cards {
   position: relative;
@@ -83,6 +85,9 @@
 }
 
 @media (min-width: $tablet) {
+  .cards__wrap {
+    margin-top: 90px;
+  }
   .cards {
     display: flex;
     justify-content: space-between;

@@ -116,7 +116,6 @@
   max-width: 1050px;
   max-height: calc(100% - 85px);
   overflow-y: auto;
-  margin: 10px auto;
 }
 
 .search__results-block {
@@ -141,7 +140,7 @@
 
 .search__list {
   @include list-reset;
-  padding: 45px 0;
+  padding-top: 45px;
   // overflow-y: scroll;
 }
 
@@ -210,6 +209,7 @@
 
   .search__results::-webkit-scrollbar-track-piece {
     background-color: #ffffff;
+    // border-radius: 5px;
   }
 
   .search__results::-webkit-scrollbar-thumb {

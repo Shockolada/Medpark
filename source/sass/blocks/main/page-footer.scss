@@ -75,6 +75,13 @@ a.page-footer__contacts-link:focus {
   text-decoration: none;
 }
 
+.page-footer--donation-hidden {
+  .donate__wrap {
+    display: none;
+  }
+}
+
+
 @media (min-width: $tablet) {
   .page-footer__top {
     display: flex;

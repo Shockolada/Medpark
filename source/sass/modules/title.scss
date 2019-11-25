@@ -5,9 +5,9 @@
   font-weight: 400;
 }
 
-.title--main {
-  margin-bottom: 50px;
-}
+// .title--main {
+//   margin-bottom: 50px;
+// }
 
 @media (min-width: $tablet) {
   .title {
@@ -15,6 +15,6 @@
   }
 
   .title--main {
-    margin-bottom: 80px;
+    margin: 50px 0;
   }
 }

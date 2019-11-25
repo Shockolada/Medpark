@@ -15,7 +15,7 @@ $(document).ready(function () {
   });
 
   function showSubmenuByClick() {
-    console.log($(window).width());
+    // console.log($(window).width());
     $('.main-nav__link.has-submenu').click(function () {
       event.preventDefault();
       $(this).closest('.main-nav__item').siblings().find('.submenu__icon').removeClass('isOpen');
@@ -26,7 +26,7 @@ $(document).ready(function () {
   }
 
   function showSubmenuByHover() {
-    console.log($(window).width());
+    // console.log($(window).width());
     $('.main-nav__link.has-submenu').mouseenter(function () {
       $(this).addClass('isOpen');
       $(this).find('.submenu__icon').addClass('isOpen');
@@ -73,7 +73,10 @@ $(document).ready(function () {
   $('.text-content iframe').wrap("<div class='text-content__video'></div>");
   $('.text-content__video').wrap("<div class='text-content__video-wrap'></div>")
 
-  /* FORM BUTTON */
+
+  /* FORM */
+
+  /* FORM SUBMIT BUTTON */
   $('#data-confirm').closest('form').find('button:submit').prop('disabled', true);
   $('#data-confirm').change(function () {
     if ($('#data-confirm').is(':checked')) {
@@ -82,20 +85,6 @@ $(document).ready(function () {
       $(this).closest('form').find('button:submit').prop('disabled', true);
     }
   });
-
-
-  /* FORM */
-  /* CONNECT INPUT & CHECKBOX */
-  $('.donate-other-summ').change(function () {
-    if (this.checked) {
-      $('.other-summ').focus();
-    }
-  });
-
-  $('.other-summ').focus(function () {
-    $('.donate-other-summ').prop('checked', true);
-  });
-
 
   /* VALIDATE FORM */
   $('.donate-step__tab-content input').filter('[required]:visible').change(function () {
@@ -130,9 +119,11 @@ $(document).ready(function () {
     return emptyFields;
   }
 
+  
+
 
   /* TABS */
-  /* ОТКРЫТЬ СЛЕДУЮЩИЙ БЛОК ПРИ КЛИКЕ НА CONTINUE */
+  /* OPEN NET BLOCK BY CLICK ON CONTINUE */
   $('.tab-content .button-next').click(function () {
     $(this).closest('.donate-step').find('.tab-link').addClass('done');
     $('.progress__point:eq(1)').addClass('done');
@@ -140,23 +131,34 @@ $(document).ready(function () {
     $(this).closest('.tab-content').stop().slideUp(300);
     $(this).closest('.tab-wrap').next().find('.tab-content').stop().slideDown(300);
 
-    /* PUT FIELDS VALUES */
-    $('#user-name').text(userName);
+    /* SET FIELDS VALUES */
+    $('#user-name').text(userName + ' ' + userLastName);
     $('#user-tel').text(userTel);
     $('#user-mail').text(userEmail);
-    $('#user-address').text(subject);
+    $('#message-subject').text(subject);
     $('#user-message').text(userMessage);
     $('#payment-summ').text(summ);
     $('#payment-method').text(payMethod);
     $('#payment-frequence').text(payFrequence);
   });
 
-  /* ОТКРЫТЬ БЛОК ЕСЛИ КЛИК ПО ЕГО ХЭДЕРУ */
+  /* OPEN BLOCK BY HEADER CLICK */
   $('.tab-link').click(function () {
-
     if ($(this).hasClass('done')) {
       $('.tab-content').stop().slideUp(300);
       $(this).closest('.tab-wrap').find('.tab-content').stop().slideDown(300);
+    }
+  });
+
+  /* CONNECT INPUT & CHECKBOX */
+  $('.donate-other-summ').change(function () {
+    if (this.checked) {
+      $('.other-summ').focus();
+    }
+  });
+  $('.other-summ').focus(function () {
+    if (this.focus) {
+      $('.donate-other-summ').prop('checked', true);
     }
   });
 
@@ -164,18 +166,19 @@ $(document).ready(function () {
   var summ = $('input[name=summ]:checked').closest('label').text();
   $('input[name=summ]').change(function () {
     summ = $(this).closest('label').text();
-    if ($('.donate-other-summ').is(':checked')) {
-      summ = $('.other-summ').val();
-    }
-    return summ;
+    $('.other-summ').val('');
+  });
+
+  $('.other-summ').on('.other-summ keyup', function () {
+    summ = $(this).val();
   });
 
   var userName = $('#first-name').val();
   var userLastName = $('#last-name').val();
-  var tel = $('#tel').val();
-  var email = $('#mail').val();
+  var userTel = $('#tel').val();
+  var userEmail = $('#mail').val();
   var subject = $('#subject').val();
-  var message = $('#message').val();
+  var userMessage = $('#message').val();
   $('#first-name').change(function () {
     userName = $('#first-name').val();
   });

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+@@include('./html-partials/basic/head.html')
+
+<body>
+
+  @@include('./html-partials/blocks/main/page-header.html')
+
+  @@include('./html-partials/blocks/main/search.html')
+
+  <!-- Main Page Content
+  ================================================== -->
+  <main class="page-content">
+
+    <div class="container donation-result">
+      <img class="donation-result__icon" src="img/error.svg" width="100" alt="">
+      <p class="donation-result__info donation-result__info--error">Din păcate, donația nu a fost efectuată.</p>
+      <a class="donation-result__link" href="index.html">Mergeți pe pagina principală</a>
+      <a class="donation-result__link" href="donation.html">Reveniți la prima etapă a donației</a>
+    </div>
+
+  </main> <!-- / Main Page Content -->
+
+  <!-- Добавить к page-footer__wrap класс page-footer--donation-hidden -->
+  @@include('./html-partials/blocks/main/page-footer.html')
+
+  <!-- Java Script
+    ================================================== -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
