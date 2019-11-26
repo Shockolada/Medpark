@@ -102,6 +102,8 @@
 
 .form__item-note {
   margin: 0;
+  color: $color-gray;
+  font-size: 14px;
 }
 
 .form__user-info {
@@ -110,6 +112,13 @@
 
 .form__user-item {
   margin: 0;
+}
+
+.form__check-group-title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 700;
 }
 
 @media (min-width: $tablet_s) {

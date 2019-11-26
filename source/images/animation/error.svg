@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	y="0px" viewBox="0 0 489.5 489.5" style="enable-background:new 0 0 489.5 489.5;" xml:space="preserve">
+	<style type="text/css">
+		.circle,
+		.line {
+			fill: none;
+			stroke: #D24A43;
+			stroke-width: 36;
+			stroke-linecap: round;
+			stroke-miterlimit: 10;
+		}
+
+		.circle {
+			stroke-dasharray: 1500;
+			stroke-dashoffset: 1500;
+			animation: 1s ring-paint 0.7s ease forwards;
+		}
+
+		.line {
+			stroke-dasharray: 300;
+			stroke-dashoffset: 300;
+		}
+
+		.line--1 {
+			animation: 0.5s line-paint 0.5s linear forwards;
+		}
+
+		.line--2 {
+			animation: 0.5s line-paint 0.3s ease forwards;
+		}
+
+		@keyframes ring-paint {
+			from {
+				stroke-dashoffset: 1400;
+			}
+
+			to {
+				stroke-dashoffset: 0;
+			}
+		}
+
+		@keyframes line-paint {
+			from {
+				stroke-dashoffset: 300;
+			}
+
+			to {
+				stroke-dashoffset: 0;
+			}
+	</style>
+	<g>
+		<circle class="circle" cx="244.8" cy="244.8" r="226" />
+		<line class="line line--1" x1="325.7" y1="163.8" x2="163.8" y2="325.7" />
+		<line class="line line--2" x1="163.8" y1="163.8" x2="325.7" y2="325.7" />
+	</g>
+</svg>

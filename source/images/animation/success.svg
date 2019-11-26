@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	y="0px" viewBox="0 0 489.5 489.5" style="enable-background:new 0 0 489.5 489.5;" xml:space="preserve">
+	<style type="text/css">
+		.circle,
+		.check {
+			fill: none;
+			stroke: #00AAAD;
+			stroke-width: 36;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-miterlimit: 10;
+		}
+
+		.circle {
+			stroke-dasharray: 1070;
+			stroke-dashoffset: 1070;
+			animation: 0.5s ring-paint 0.3s linear forwards;
+		}
+
+    .check {
+      stroke-dasharray: 500;
+			stroke-dashoffset: 500;
+			animation: 1s check-paint 0.3s ease forwards;
+    }
+
+		@keyframes ring-paint {
+			from {
+				stroke-dashoffset: 1070;
+			}
+
+			to {
+				stroke-dashoffset: 0;
+			}
+		}
+
+    @keyframes check-paint {
+			from {
+				stroke-dashoffset: 500;
+			}
+
+			to {
+				stroke-dashoffset: 0;
+			}
+		}
+	</style>
+	<g>
+		<path class="circle" d="M394.5,255.2c0,60.5-29,119.8-82.9,156.3c-86.1,58.3-203.3,35.6-261.5-50.5S14.4,157.7,100.6,99.4
+	S303.8,63.8,362,149.9"/>
+		<polyline class="check" points="123.5,217.4 211.8,305.7 471.7,45.8 	" />
+	</g>
+</svg>
