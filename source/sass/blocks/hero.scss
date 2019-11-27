@@ -1,3 +1,9 @@
 .hero {
   padding-top: 70px;
 }
+
+@media (min-width: $desktop_xs) { 
+  .hero {
+    padding-top: 95px;
+  }
+}

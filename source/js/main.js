@@ -119,8 +119,6 @@ $(document).ready(function () {
     return emptyFields;
   }
 
-  
-
 
   /* TABS */
   /* OPEN NET BLOCK BY CLICK ON CONTINUE */
@@ -130,6 +128,14 @@ $(document).ready(function () {
     $('.progress__point:eq(2)').addClass('active');
     $(this).closest('.tab-content').stop().slideUp(300);
     $(this).closest('.tab-wrap').next().find('.tab-content').stop().slideDown(300);
+
+    var nextEl = $(this).closest('.tab-wrap').next().find('.tab-content');
+    setTimeout(function () {
+      var top = nextEl.offset().top - 160;
+      $('body, html').animate({
+        scrollTop: top
+      }, 300);
+    }, 300);
 
     /* SET FIELDS VALUES */
     $('#user-name').text(userName + ' ' + userLastName);
@@ -147,12 +153,23 @@ $(document).ready(function () {
     if ($(this).hasClass('done')) {
       $('.tab-content').stop().slideUp(300);
       $(this).closest('.tab-wrap').find('.tab-content').stop().slideDown(300);
+
+      var nextEl = $(this).closest('.tab-wrap').find('.tab-content');
+      setTimeout(function () {
+        var top = nextEl.offset().top - 160;
+        $('body, html').animate({
+          scrollTop: top
+        }, 300);
+      }, 300);
     }
   });
 
   /* CONNECT INPUT & CHECKBOX */
   $('.donate-other-summ').change(function () {
+    console.log('changed')
+    // $('.other-summ').closest('.form__item.hidden').stop().slideUp(200);
     if (this.checked) {
+      $('.other-summ').closest('.form__item.hidden').stop().slideDown(200);
       $('.other-summ').focus();
     }
   });
