@@ -1,7 +1,10 @@
+/* MENU */
 $(document).ready(function () {
-  /* MENU */
+
+  /* MOBILE MENU */
   $('.menu__btn').click(function () {
     event.preventDefault();
+    // $('body, html').toggleClass('no-scroll');
     $('body').addClass('no-scroll');
     $('.menu').toggleClass('active');
     $(this).toggleClass('active');
@@ -14,10 +17,36 @@ $(document).ready(function () {
     event.preventDefault();
   });
 
+  var mobileWidthMarker = true;
+  if ($(window).width() >= 940) {
+    mobileWidthMarker = false;
+  }
+
+  if (mobileWidthMarker) {
+    showSubmenuByClick();
+  } else {
+    showSubmenuByHover();
+  }
+
+  $(window).resize(function () {
+    if ($(window).width() < 940) {
+      if (mobileWidthMarker) {
+        $('.main-nav__link.has-submenu').off('mouseenter');
+        $('.main-nav__item').off('mouseleave');
+        showSubmenuByClick();
+        mobileWidthMarker = false;
+      }
+    } else if ($(window).width() >= 940) {
+      if (!mobileWidthMarker) {
+        $('.main-nav__link.has-submenu').off('click');
+        showSubmenuByHover();
+        mobileWidthMarker = true;
+      }
+    }
+  });
+
   function showSubmenuByClick() {
-    // console.log($(window).width());
     $('.main-nav__link.has-submenu').click(function () {
-      event.preventDefault();
       $(this).closest('.main-nav__item').siblings().find('.submenu__icon').removeClass('isOpen');
       $(this).find('.submenu__icon').toggleClass('isOpen');
       $(this).closest('.main-nav__item').siblings().find('.submenu').stop().slideUp(300);
@@ -26,7 +55,6 @@ $(document).ready(function () {
   }
 
   function showSubmenuByHover() {
-    // console.log($(window).width());
     $('.main-nav__link.has-submenu').mouseenter(function () {
       $(this).addClass('isOpen');
       $(this).find('.submenu__icon').addClass('isOpen');
@@ -39,26 +67,11 @@ $(document).ready(function () {
       });
     });
   }
+});
 
-  if ($(window).width() < 940) {
-    showSubmenuByClick();
-  } else if ($(window).width() >= 940) {
-    showSubmenuByHover();
-  }
 
-  $(window).resize(function () {
-    // $('.main-nav__link.has-submenu').attr("style", "");
-    if ($(window).width() < 940) {
-      $('.main-nav__link.has-submenu').off('mouseenter');
-      $('.main-nav__item').off('mouseleave');
-      showSubmenuByClick();
-    } else if ($(window).width() >= 940) {
-      $('.main-nav__link.has-submenu').off('click');
-      showSubmenuByHover();
-    }
-  });
-
-  /* SEARCH */
+/* SEARCH */
+$(document).ready(function () {
   $('.page-header__search').click(function () {
     $('body, html').addClass('no-scroll');
     $('.search__area').fadeIn(400);
@@ -68,28 +81,26 @@ $(document).ready(function () {
       $('.search__area').fadeOut(400);
     });
   });
-
-  /* VIDEO */
-  $('.text-content iframe').wrap("<div class='text-content__video'></div>");
-  $('.text-content__video').wrap("<div class='text-content__video-wrap'></div>")
+});
 
 
-  /* FORM */
+/* FORM SUBMIT BUTTON */
+$('#data-confirm').closest('form').find('button:submit').prop('disabled', true);
+$('#data-confirm').change(function () {
+  if ($('#data-confirm').is(':checked')) {
+    $(this).closest('form').find('button:submit').prop('disabled', false);
+  } else {
+    $(this).closest('form').find('button:submit').prop('disabled', true);
+  }
+});
 
-  /* FORM SUBMIT BUTTON */
-  $('#data-confirm').closest('form').find('button:submit').prop('disabled', true);
-  $('#data-confirm').change(function () {
-    if ($('#data-confirm').is(':checked')) {
-      $(this).closest('form').find('button:submit').prop('disabled', false);
-    } else {
-      $(this).closest('form').find('button:submit').prop('disabled', true);
-    }
-  });
 
+/* FORM */
+$(document).ready(function () {
   /* VALIDATE FORM */
   $('.donate-step__tab-content input').filter('[required]:visible').change(function () {
     var buttonNext = $(this).closest('.donate-step__tab-content').find('.form__btn');
-    if (isEmptyFields()) {
+    if (!isEmptyFields()) {
       buttonNext.prop('disabled', false);
       $(this).closest('.donate-step').find('.tab-link').addClass('done');
       $('.progress__point:eq(0)').addClass('done');
@@ -101,7 +112,7 @@ $(document).ready(function () {
 
   $('.donate-step__tab-content input').filter('[required]:visible').keydown(function () {
     var buttonNext = $(this).closest('.donate-step__tab-content').find('.form__btn');
-    if (isEmptyFields()) {
+    if (!isEmptyFields()) {
       buttonNext.prop('disabled', false);
       $(this).closest('.donate-step').find('.tab-link').addClass('done');
     } else {
@@ -110,16 +121,16 @@ $(document).ready(function () {
   });
 
   function isEmptyFields() {
-    var emptyFields = true;
+    var emptyFields = false;
     $('input').filter('[required]:visible').each(function () {
       if ($(this).val() == '') {
-        emptyFields = false;
+        emptyFields = true;
       }
     });
     return emptyFields;
   }
 
-
+  
   /* TABS */
   /* OPEN NET BLOCK BY CLICK ON CONTINUE */
   $('.tab-content .button-next').click(function () {
@@ -166,10 +177,7 @@ $(document).ready(function () {
 
   /* CONNECT INPUT & CHECKBOX */
   $('.donate-other-summ').change(function () {
-    console.log('changed')
-    // $('.other-summ').closest('.form__item.hidden').stop().slideUp(200);
     if (this.checked) {
-      $('.other-summ').closest('.form__item.hidden').stop().slideDown(200);
       $('.other-summ').focus();
     }
   });
@@ -184,10 +192,18 @@ $(document).ready(function () {
   $('input[name=summ]').change(function () {
     summ = $(this).closest('label').text();
     $('.other-summ').val('');
+
+    if ($(this).hasClass('donate-other-summ')) {
+      $('.other-summ').closest('.form__item.hidden').stop().slideDown(200);
+    } else {
+      $('.other-summ').closest('.form__item.hidden').stop().slideUp(200);
+    }
   });
 
   $('.other-summ').on('.other-summ keyup', function () {
-    summ = $(this).val();
+    newSummVal = $(this).val();
+    $('.donate-other-summ').val(newSummVal);
+    summ = newSummVal;
   });
 
   var userName = $('#first-name').val();
@@ -224,5 +240,11 @@ $(document).ready(function () {
   $('input[name=payment-frequence]').change(function () {
     payFrequence = $('input[name=payment-frequence]:checked').closest('label').text();
   });
+});
 
+
+/* VIDEO */
+$(document).ready(function () {
+  $('.text-content iframe').wrap("<div class='text-content__video'></div>");
+  $('.text-content__video').wrap("<div class='text-content__video-wrap'></div>")
 });

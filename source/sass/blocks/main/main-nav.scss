@@ -57,17 +57,17 @@
     background-color: $color-accent;
     // cursor: default;
 
-    .submenu__icon:after {
-      border-right: 1px solid #ffffff;
-      border-bottom: 1px solid #ffffff;
-    }
+    // .submenu__icon:after {
+    //   border-right: 1px solid #ffffff;
+    //   border-bottom: 1px solid #ffffff;
+    // }
   }
 
-  .main-nav__link.isOpen {
-    .submenu__icon:after {
-      transform: rotate(-135deg);
-    }
-  }
+  // .main-nav__link.isOpen {
+  //   .submenu__icon:after {
+  //     transform: rotate(-135deg);
+  //   }
+  // }
 }
 
 @media (min-width: $desktop_s) {

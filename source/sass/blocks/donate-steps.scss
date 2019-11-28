@@ -72,6 +72,10 @@
   }
 }
 
+.donate-step:not(:first-of-type) .donate-step__tab-link:after {
+  border-top: 1px solid #ffffff;
+}
+
 .donate-step__tab-link.done {
   &::before {
     background-color: $color-accent;
