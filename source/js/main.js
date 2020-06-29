@@ -248,3 +248,9 @@ $(document).ready(function () {
   $('.text-content iframe').wrap("<div class='text-content__video'></div>");
   $('.text-content__video').wrap("<div class='text-content__video-wrap'></div>")
 });
+
+$(document).ready(function () {
+  if ($(window).width() < 1024) {
+    $('.text-content img').attr('style', '');
+  }
+});
