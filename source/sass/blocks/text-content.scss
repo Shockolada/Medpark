@@ -86,6 +86,11 @@
   }
 }
 
+.article {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .main-image__image {
   display: block;
   width: 100%;
@@ -93,6 +98,7 @@
   object-fit: cover;
   object-position: center;
   max-height: 453px;
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 
